@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj": {}
+  },
+  "projects": {
+    "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
+        "projectName": "MinimalApiTest",
+        "projectPath": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
+        "packagesPath": "/Users/cgl/.nuget/packages/",
+        "outputPath": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/cgl/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
