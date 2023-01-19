@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/Users/cgl/.nuget/packages/": {}
+    "/Users/for/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
+      "projectUniqueName": "/Users/for/katas/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
       "projectName": "MinimalApiTest",
-      "projectPath": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
-      "packagesPath": "/Users/cgl/.nuget/packages/",
-      "outputPath": "/Users/cgl/Documents/i3/deltatre/poc/MinimalKatApi/MinimalApiTest/obj/",
+      "projectPath": "/Users/for/katas/MinimalKatApi/MinimalApiTest/MinimalApiTest.csproj",
+      "packagesPath": "/Users/for/.nuget/packages/",
+      "outputPath": "/Users/for/katas/MinimalKatApi/MinimalApiTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/cgl/.nuget/NuGet/NuGet.Config"
+        "/Users/for/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
