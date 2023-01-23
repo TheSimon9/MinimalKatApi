@@ -1,2 +1,4 @@
 MinimalApiTest/obj/
 MinimalApiTest/bin/
+.DS_Store
+MinimalApiTest/.DS_Store
