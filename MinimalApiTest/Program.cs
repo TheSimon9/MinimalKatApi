@@ -1,9 +1,19 @@
-using Microsoft.AspNetCore.Mvc;
+using Confluent.Kafka;
 
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+WebApplication.CreateBuilder(args);
 
-app.MapGet("/", () => "Hello");
-app.MapPost("/{id}", ([FromRoute] string id) => $"Create a resource with id: {id}");
+var conf = new ConsumerConfig
+{
+    GroupId = "group-name",
+    BootstrapServers = "localhost:9092",
+    AutoOffsetReset = AutoOffsetReset.Earliest
+};
 
-app.Run();
+var c = new ConsumerBuilder<Ignore, string>(conf).Build();
+c.Subscribe("test");
+
+while (true)
+{
+    var cr = c.Consume(new CancellationTokenSource().Token);
+    Console.WriteLine($"Consumed message '{cr.Value}' at: '{cr.TopicPartitionOffset}'.");
+}
