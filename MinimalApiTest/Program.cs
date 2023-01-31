@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Net;
 using System.Text;
 using Confluent.Kafka;
 
@@ -37,7 +38,7 @@ c.Subscribe("dispatch-provider");
 
 var latencyList = new List<double>();
 var cancellationToken = new CancellationTokenSource().Token;
-var client = new HttpClient();
+WebClient client = new WebClient();
 while (true)
 {
     var cr = c.Consume(cancellationToken);
@@ -49,7 +50,11 @@ while (true)
     latencyList.Add(latency);
     
     Console.WriteLine($"Consumed message '{messageNumber}' - latency: '{latency}' - percentile50: '{Percentile(50,latencyList)}' - percentile90: '{Percentile(90,latencyList)}' - percentile99: '{Percentile(99,latencyList)}'");
-    var content = new StringContent(latency.ToString(CultureInfo.CurrentCulture), Encoding.UTF8, "application/json");
-    var response = client.PostAsync(new Uri("http://localhost:5002"), content).Result;
+
+    string message = "{'Hello, Server'}";
+
+    client.Headers[HttpRequestHeader.ContentType] = "application/json";
+    string response = client.UploadString("http://localhost:5002", "POST", message);
+
     Console.WriteLine($"response '{response}'");
 }
