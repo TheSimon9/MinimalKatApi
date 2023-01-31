@@ -23,7 +23,6 @@ double Percentile(double percentile, List<double> values)
     
     return Math.Ceiling(values.ElementAt((int)k-1));
 }
-
 var conf = new ConsumerConfig
 {
     GroupId = "dispatcher",
@@ -35,10 +34,10 @@ var c = new ConsumerBuilder<Ignore, string>(conf).Build();
 c.Subscribe("dispatch-provider");
 
 var latencyList = new List<double>();
+var cancellationToken = new CancellationTokenSource().Token;
 while (true)
 {
-
-    var cr = c.Consume(new CancellationTokenSource().Token);
+    var cr = c.Consume(cancellationToken);
     var messageNumber = cr.Value.Split("-")[0];
     var messageDateSent = cr.Value.Split("-")[1];
 
@@ -46,5 +45,5 @@ while (true)
     
     latencyList.Add(latency);
     
-    Console.WriteLine($"Consumed message '{messageNumber}' - latency: '{latency}' - percentile50: '{Percentile(50,latencyList)} - percentile90: '{Percentile(90,latencyList)}'");
+    Console.WriteLine($"Consumed message '{messageNumber}' - latency: '{latency}' - percentile50: '{Percentile(50,latencyList)}' - percentile90: '{Percentile(90,latencyList)}' - percentile99: '{Percentile(99,latencyList)}'");
 }
